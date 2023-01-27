@@ -14,15 +14,15 @@ export default Profile = ({ username, tag, location, avatar, stats }) => {
       <ul className="stats">
         <li>
           <span className="label">Followers</span>
-          <span className="quantity">{stats}</span>
+          <span className="quantity">{stats.follower}</span>
         </li>
         <li>
           <span className="label">Views</span>
-          <span className="quantity">{stats}</span>
+          <span className="quantity">{stats.views}</span>
         </li>
         <li>
           <span className="label">Likes</span>
-          <span className="quantity">{stats}</span>
+          <span className="quantity">{stats.likes}</span>
         </li>
       </ul>
     </div>
