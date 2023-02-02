@@ -1,0 +1,12 @@
+.tableRow td {
+  padding: 15px 20px;
+  font-weight: 300;
+}
+
+.tableRow:nth-of-type(even) {
+  background-color: #cbdfe4;
+}
+
+.tableRow:last-of-type {
+  border-bottom: 3px solid #287289;
+}

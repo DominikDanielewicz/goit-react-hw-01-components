@@ -1,28 +1,30 @@
-import { Profile } from './Profile.styles.js';
+import css from './Profile.module.css';
 import PropTypes from 'prop-types';
 
-export default Profile = ({ username, tag, location, avatar, stats }) => {
+const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={avatar} alt="User avatar" className="avatar" />
-        <p className="name">{username}</p>
-        <p className="tag">{tag}</p>
-        <p className="location">{location}</p>
+    <div className={css.profile}>
+      <div className={css.description}>
+        <img src={avatar} alt="User avatar" className={css.avatar} />
+        <p className={css.name}>{username}</p>
+        <p className={css.tag}>@{tag}</p>
+        <p className={css.location}>{location}</p>
       </div>
 
-      <ul className="stats">
-        <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{stats.follower}</span>
+      <ul className={css.stats}>
+        <li className={css.box}>
+          <span className={css.label}>Followers</span>
+          <span className={css.quantity}>
+            {stats.followers.toLocaleString()}
+          </span>
         </li>
-        <li>
-          <span className="label">Views</span>
-          <span className="quantity">{stats.views}</span>
+        <li className={css.box}>
+          <span className={css.label}>Views</span>
+          <span className={css.quantity}>{stats.views.toLocaleString()}</span>
         </li>
-        <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{stats.likes}</span>
+        <li className={css.box}>
+          <span className={css.label}>Likes</span>
+          <span className={css.quantity}>{stats.likes.toLocaleString()}</span>
         </li>
       </ul>
     </div>
@@ -40,3 +42,5 @@ Profile.propTypes = {
     likes: PropTypes.number,
   }),
 };
+
+export default Profile;

@@ -1,0 +1,31 @@
+.item {
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Roboto';
+  border-radius: 10px;
+}
+
+.status {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+}
+
+.online {
+  background-color: #007e00;
+}
+
+.offline {
+  background-color: #ff0000;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 500;
+  color: #122236;
+}
