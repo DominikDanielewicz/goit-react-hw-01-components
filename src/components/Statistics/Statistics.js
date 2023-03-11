@@ -5,7 +5,7 @@ import { setBg } from './color';
 const Statistics = ({ title, stats }) => {
   return (
     <section className={css.statistics}>
-      {title !== undefined ? <h2 className={css.title}>{title}</h2> : false}
+      {title !== undefined ? <h2 className={css.title}>{title}</h2> : null}
       <ul className={css.statList}>
         {stats.map(stat => (
           <li
@@ -24,10 +24,12 @@ const Statistics = ({ title, stats }) => {
 
 Statistics.propTypes = {
   title: PropTypes.string,
-  stats: PropTypes.exact({
-    label: PropTypes.string,
-    percentage: PropTypes.number,
-  }),
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
 
 export default Statistics;
